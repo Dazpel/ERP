@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gift Store | </title>
+    <title>Style Odonate's | </title>
 
     <!-- Bootstrap -->
     <link href=" {{ asset('vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -25,7 +25,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title " style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-gift" ></i> <span>Gift Store</span></a>
+              <a href="{{url('/')}}" class="site_title"><i class="fa fa-gift" ></i> <span>Style Odonate's</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -36,8 +36,8 @@
                 <i class="fa fa-user " ></i>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12 text-center center-block">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span>Bienvenido,</span>
+                <h2>{{strtoupper(Auth::user()->nombre)}}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -51,36 +51,36 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-users" aria-hidden="true"></i> Empleados <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Registro</a></li>
-                      <li><a href="index2.html">Consulta</a></li>
+                      <li><a href="{{url('/user')}}">Registro</a></li>
+                      <li><a href="{{url('/user/list')}}">Consulta</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-money" aria-hidden="true"></i>Ventas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">Registro </a></li>
-                      <li><a href="form_advanced.html">Registro histórico</a></li>
-                      <li><a href="form_validation.html">Consulta</a></li>
+                      <li><a href="{{url('/ventas/')}}">Registro </a></li>
+                      <li><a href="{{url('/ventas/historia')}}">Registro histórico</a></li>
+                      <li><a href="{{url('/ventas/list')}}">Consulta</a></li>
                       
                     </ul>
                   </li>
                   <li><a><i class="fa fa-male" aria-hidden="true"></i> Proveedores <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="general_elements.html">Registro</a></li>
-                      <li><a href="media_gallery.html">Consulta</a></li>
+                      <li><a href="{{url('/proveedor')}}">Registro</a></li>
+                      <li><a href="{{url('/proveedor/list')}}">Consulta</a></li>
                      
                     </ul>
                   </li>
                   <li><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> Inventario <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.html">Registro</a></li>
-                      <li><a href="tables_dynamic.html">Consulta</a></li>
+                      <li><a href="{{url('/inventario')}}">Registro</a></li>
+                      <li><a href="{{url('/inventario/list')}}">Consulta</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Usuarios</a></li>
-                      <li><a href="chartjs2.html">Ventas</a></li>
-                      <li><a href="morisjs.html">Compras</a></li>
+                      <li><a href="{{url('/reports/users')}}">Usuarios</a></li>
+                      <li><a href="{{url('/reports/ventas')}}">Ventas</a></li>
+                      <li><a href="{{url('/reports/compras')}}">Compras</a></li>
                       
                     </ul>
                   </li>
@@ -171,8 +171,26 @@
     <script src=" {{ asset('vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
     <script src=" {{ asset('vendors/nprogress/nprogress.js') }}"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="{{ asset('vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
+        <!-- Datatables -->
+    <script src="{{ asset('vendors/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js')}}"></script>
     
+    <script src="{{ asset('vendors/jszip/dist/jszip.min.js')}}"></script>
+    <script src="{{ asset('vendors/pdfmake/build/pdfmake.min.js')}}"></script>
+    <script src="{{ asset('vendors/pdfmake/build/vfs_fonts.js')}}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('build/js/custom.min.js ') }}"></script>
+
+    @yield('scripts')
   </body>
 </html>

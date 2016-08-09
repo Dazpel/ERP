@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::controller('/user','UserController');
+Route::controller('/ventas','VentasController');
+Route::controller('/proveedor','ProveedorController');
+Route::controller('/inventario','InventarioController');
+Route::controller('/reports','ReportsController');
+
+Route::get('/', 'HomeController@index');
