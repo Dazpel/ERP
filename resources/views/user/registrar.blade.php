@@ -51,7 +51,8 @@
                         </li>
                         
                       </ul>
-                      <form >
+                      <form id="Form">
+                     {{ csrf_field() }}
                       <div id="step-1">
                         <div class="form-horizontal form-label-left">
 
@@ -84,14 +85,22 @@
                       </div>
                       <div id="step-2">
                       <div class="form-horizontal form-label-left">
-                        <div class="form-group">
+
+                          <div class="form-group">                              
+                            <label class="control-label center-block switch">
+                              <input type="checkbox" id="chack" >
+                              <div class="slider round"></div>
+                            </label>
+
+                          </div>
+                          <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Correo <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <input type="text" id="first-name" required="required" name="email" class="form-control col-md-7 col-xs-12">
                             </div>
                           </div>
-                          <div class="form-group">
+                          <div class="form-group hidden" id="pass">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Contraseña <span class=""></span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -118,6 +127,7 @@
                           </div>
                          </div>
                       </div>
+
                      </form>
                     </div>
                  </div>
@@ -131,15 +141,65 @@
 @section('scripts')
     <script>
       $(document).ready(function() {
-        $('#wizard').smartWizard();
+        $('#wizard').smartWizard({
+        transitionEffect: 'fade', 
+          onFinish: onFinishCallback,
+          labelFinish:'Enviar'
+        }
+          );
 
-        $('#wizard_verticle').smartWizard({
-          transitionEffect: 'slide'
-        });
+       function onFinishCallback(){
+           $.ajax({
+             type:'POST',
+             url: '/user/add',
+             data: $('#Form').serialize(),
+             cache: false,
+             success: function(){
+                  
+                  new PNotify({
+                                  title: 'Registro Exitoso',
+                                  text: 'Usuario Registrado con Éxito',
+                                  type: 'success',
+                                  hide: true,
+                                  delay:8000,
+                                  styling: 'bootstrap3'
+                              });          
+              document.getElementById('Form').reset();               
+             },
+             error: function(result){
+              new PNotify({
+                                  title: 'Error',
+                                  text: 'Ha ocurrido un error en el registro revise los datos',
+                                  type: 'error',
+                                  hide: true,
+                                  delay:8000,
+                                  styling: 'bootstrap3'
+                              });  
+             }
+
+           });
+          }
 
         $('.buttonNext').addClass('btn btn-success');
         $('.buttonPrevious').addClass('btn btn-primary');
-        $('.buttonFinish').addClass('btn btn-default');
+       $('.buttonFinish').addClass('btn btn-default');
+
+        var state= $("#chack").attr("checked") ? 1 : 0;
+         
+        $("#chack").change(function(event) {
+          if (state==0) {
+            state=1
+            $("#pass").removeClass('hidden');
+          }else{
+             
+            state=0
+             $("#pass").addClass('hidden');
+          }
+          
+        });
+
+        
       });
+
     </script>
 @endsection

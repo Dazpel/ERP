@@ -18,5 +18,5 @@ Route::controller('/ventas','VentasController');
 Route::controller('/proveedor','ProveedorController');
 Route::controller('/inventario','InventarioController');
 Route::controller('/reports','ReportsController');
-
+Route::auth();
 Route::get('/', 'HomeController@index');

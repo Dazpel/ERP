@@ -13,7 +13,12 @@
     <link href=" {{ asset('vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href=" {{ asset('vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-
+    <!-- iCheck -->
+    <link href="{{ asset('vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+      <!-- PNotify -->
+    <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href=" {{ asset('build/css/custom.min.css') }}" rel="stylesheet">
     <link href=" {{ asset('build/css/style.css') }}" rel="stylesheet">
@@ -170,6 +175,8 @@
     <!-- FastClick -->
     <script src=" {{ asset('vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
+        <!-- iCheck -->
+    <script src="{{ asset('vendors/iCheck/icheck.min.js')}}"></script>
     <script src=" {{ asset('vendors/nprogress/nprogress.js') }}"></script>
     <!-- jQuery Smart Wizard -->
     <script src="{{ asset('vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
@@ -188,6 +195,10 @@
     <script src="{{ asset('vendors/jszip/dist/jszip.min.js')}}"></script>
     <script src="{{ asset('vendors/pdfmake/build/pdfmake.min.js')}}"></script>
     <script src="{{ asset('vendors/pdfmake/build/vfs_fonts.js')}}"></script>
+        <!-- PNotify -->
+    <script src="../vendors/pnotify/dist/pnotify.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('build/js/custom.min.js ') }}"></script>
 
