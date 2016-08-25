@@ -35,7 +35,7 @@ class UserController extends Controller
         DB::table('sueldos')->insert(
             ['sueldo' =>  $request->sueldo_actual, 'fecha' => $request->fecha_ingreso, 'porcentaje' => 100, 'user_id' => $user->id]
         );
-    	return $user;
+    	return redirect('user/list');
 
     }
 

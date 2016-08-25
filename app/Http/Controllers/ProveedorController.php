@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\Proveedor as Proveedor;
 class ProveedorController extends Controller
 {
     public function getIndex(){
@@ -13,7 +13,23 @@ class ProveedorController extends Controller
     }
 
     public function getList(){
-    	$users= User::all();
-    	return view('proveedor.consulta')->with('users',$users);
+    	$proveedors= Proveedor::all();
+    	return view('proveedor.consulta')->with('proveedors',$proveedors);
+    }
+
+     public function postAdd(Request $request){
+    	$proveedor=new Proveedor();
+    	//--------------------------------------------------------------------------------
+    	$proveedor->nombre=$request->nombre;
+    	$proveedor->telf=$request->telefono;
+    	$proveedor->direccion=$request->direccion;
+    	$proveedor->correo=$request->email;
+    	
+    //--------------------------------------------------------------------------------
+
+    	$proveedor->save();
+      
+    	return redirect('proveedor/list');
+
     }
 }

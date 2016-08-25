@@ -15,7 +15,7 @@
                   </div>
                   <div class="x_content">
                     <p class="text-muted font-13 m-b-30">
-                      Listado de Empleados registrados, pude consultar por el campo de su preferecia y descarcar en los distintos formatos presentados a continuación.
+                      Listado de Proveedores registrados, pude consultar por el campo de su preferecia y descarcar en los distintos formatos presentados a continuación.
                     </p>
                     <div id="datatable-responsive_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                     <div class="row">
@@ -24,27 +24,24 @@
                       <thead>
                         <tr>
                           <th>Nombre</th>
-                          <th>Cédula</th>
+                          <th>Teléfono</th>
+                          <th>Dirección</th>
                           <th>Correo</th>
-                          <th>Sueldo</th>
-                          <th>Fecha de Ingreso</th>
-                          <th>Histórico</th>
-                           <th>Modificación</th>
+                          
                         </tr>
                       </thead>
 
 
                       <tbody>
                         
-                         @foreach($users as $user)
+                         @foreach($proveedors as $proveedor)
                         <tr>
-                          <td>{{$user->nombre.' '.$user->apellido}}</td>
-                          <td>{{$user->cedula}}</td>
-                          <td>{{$user->email}}</td>
-                          <td>{{$user->sueldo_actual}}</td>
-                          <td>{{$user->fecha_ingreso}}</td>
-                          <td><a href="{{url('/user/salary/')}}/{{$user->id}}" class="btn btn-primary"> Ver Salarios </a></td>
-                          <td><a href="{{url('/user/edit/')}}/{{$user->id}}" class="btn btn-primary">Editar</a></td>
+                          <td>{{$proveedor->nombre}}</td>
+                          <td>{{$proveedor->telf}}</td>
+                          <td>{{$proveedor->direccion}}</td>
+                          <td>{{$proveedor->correo}}</td>
+                          
+                          
                         </tr>
                         @endforeach
                       </tbody>
