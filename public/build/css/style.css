@@ -75,3 +75,19 @@ input:checked + .slider:before {
 
 .stepContainer{
   height: auto !important;
+}
+  .absolute{
+    position: absolute;
+  }
+  .bottom{
+    bottom: 0;
+  }
+
+  #observacion{
+
+    height: 50px;
+  }
+  .margin{
+    z-index: 0;
+    padding-top: 50%;
+  }

@@ -37,9 +37,10 @@ class InventarioController extends Controller
     		$inv= new Inventario();
 
 
-    		$inv->producto=$request->producto[$i];
+    		$inv->prod_id=$request->producto[$i];
     		$inv->precio_unitario=$request->precio_unitario[$i];
     		$inv->precio_venta=$request->Precio_venta[$i];
+            $inv->cantidad=$request->cantidad[$i];
     		$inv->comp_id=$compra->id;
     		$inv->save();
 
@@ -49,7 +50,9 @@ class InventarioController extends Controller
 
     }
     public function getList(){
-    	$users= User::all();
-    	return view('inventario.consulta')->with('users',$users);
+    	$inv= Inventario::all();
+
+        dd($inv);
+    	return view('inventario.consulta')->with('inv',$inv);
     }
 }

@@ -12,4 +12,9 @@ protected $table='inventario';
     {
         return $this->belongsTo('App\Compra');
     }
+
+    public function producto()
+    {
+    	return $this->belongsTo('App\Producto', 'prod_id','id');
+    }
 }

@@ -4,7 +4,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Inventario<small></small></h2>
+                    <h2>Listado de Productos<small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -15,7 +15,7 @@
                   </div>
                   <div class="x_content">
                     <p class="text-muted font-13 m-b-30">
-                      Listado de Empleados registrados, pude consultar por el campo de su preferecia y descarcar en los distintos formatos presentados a continuación.
+                      Listado de Productos registrados, pude consultar por el campo de su preferecia y descarcar en los distintos formatos presentados a continuación.
                     </p>
                     <div id="datatable-responsive_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                     <div class="row">
@@ -23,8 +23,9 @@
                     <table id="datatable-buttons" class="table table-responsive table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed">
                       <thead>
                         <tr>
-                          <th>Producto</th>
-                          <th>Cantidad</th>
+                          <th>Nombre</th>
+                          <th>Descripción</th>
+                          
                           
                         </tr>
                       </thead>
@@ -32,11 +33,11 @@
 
                       <tbody>
                         
-                         @foreach($inv as $i)
-                        <tr>
-                          <td>{{$i->producto->nombre}}</td>
-                          <td>{{$i->cantidad}}</td>
-                 
+                         @foreach($productos as $producto)
+                          <td>{{$producto->nombre}}</td>
+                          <td>{{$producto->descripcion}}</td>
+                         
+                          
                         </tr>
                         @endforeach
                       </tbody>

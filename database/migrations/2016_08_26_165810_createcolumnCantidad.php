@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInventarioTable extends Migration
+class CreatecolumnCantidad extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateInventarioTable extends Migration
      */
     public function up()
     {
-        Schema::create('inventario', function (Blueprint $table) {
-            $table->increments('id');
-            
-            $table->string('precio_unitario');
-            $table->string('precio_venta');
+        Schema::table('inventario', function ($table) {
+            $table->string('cantidad');
+
+
             
         });
     }
