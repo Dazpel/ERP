@@ -91,3 +91,16 @@ input:checked + .slider:before {
     z-index: 0;
     padding-top: 50%;
   }
+
+  .modal{
+    width: 100%;
+  }
+.nav-md .container.body .col-md-3.left_col{
+  z-index: 100;
+}
+  .modal-lg{
+    width: 100%;
+    margin: 0;
+    z-index: 1000;
+    height: 100%;
+  }
