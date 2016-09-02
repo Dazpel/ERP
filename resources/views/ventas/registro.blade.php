@@ -238,8 +238,24 @@ function modal(){
 //--------------------------poblando el modal-----------
 var data= $('#Form').serializeArray();
  console.log(data);
+//-----productos
+for (var i = 1; i <= data[2].value; i++) {
+  for (var i = 1; i <= data[2].value*2; i=i+2) {
+    $('#prod').append('<li>'+data[2+i].value+'</li>');
+  $('#cant').append('<li>'+data[2+i+1].value+'</li>');
+  $('#total').append('<li>Total</li>');
+  }
+  
+  //-----productos
 
-
+  //------ingresos
+  var inicio=data[2].value*2+2;
+  var fin=data[2].value*2+5; 
+for (var i = inicio; i <= fin; i++) {
+  $('#ingresos').append('<li>'+data[i+1].value+'</li>');
+}
+  
+}
   //--------------Inicio el modal-------------------
   $("#modal").modal();
 

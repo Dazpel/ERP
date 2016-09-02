@@ -13,19 +13,19 @@
                                 <p>Productos</p>
                                 <div class="col-md-4 col-lg-4 col-sm-4">
                                   <p>items</p>
-                                  <ul>
+                                  <ul id="prod">
                                     
                                   </ul>
                                 </div>
                                 <div class="col-md-4 col-lg-4 col-sm-4">
                                   <p>Cant</p>
-                                  <ul>
+                                  <ul id="cant">
                                     
                                   </ul>
                                 </div>
                                 <div class="col-md-4 col-lg-4 col-sm-4">
                                   <p>Total</p>
-                                  <ul>
+                                  <ul id="total">
                                     
                                   </ul>
                                 </div>
@@ -35,11 +35,15 @@
                                    <p class="text-center">Ingresos</p>
                                    <div class="col-md-6 col-lg-6">
                                     <p>Descripción</p>
-                                      <ul></ul>
+                                      <ul><li>Reporte Z</li>
+                                      <li>Efectivo</li>
+                                      <li>Punto</li>
+                                      <li>Total</li>
+                                      </ul>
                                    </div>
                                    <div class="col-md-6 col-lg-6">
                                     <p>Monto</p>
-                                      <ul></ul>
+                                      <ul id="ingresos"></ul>
                                    </div>
                                 </div>
                                 <div class="col-md-12">
