@@ -15,7 +15,7 @@ class userSeeder extends Seeder
             'nombre' => 'judiel',
             'apellido' => 'reyes',
             'cedula' => '21424985',
-            'correo' => 'judielsm@gmail.com',
+            'email' => 'judielsm@gmail.com',
             'sueldo_actual' => '15000',
             'password' => bcrypt('Turisas1b'),
         ]);
