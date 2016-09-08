@@ -12,6 +12,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
+                      <li><button type="button" name="button" class="btn btn-success">Nuevo Tipo de Producto</button></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -20,11 +21,21 @@
 
                     <!-- Smart Wizard -->
                     <p>Complete los pasos llenando los campos correspondientes</p>
-                    
-                      
+
+
                       <form action="/producto/add" method="post">
                         {{csrf_field()}}
                         <div class="form-horizontal form-label-left">
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo Producto <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select type="text" id="first-name" required="required" name="tipo_producto" class="form-control col-md-7 col-xs-12">
+                                <option value="">Seleccione</option>
+
+                              </select>
+                            </div>
+                          </div>
 
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Producto <span class="required">*</span>
@@ -33,7 +44,7 @@
                               <input type="text" id="first-name" required="required" name="producto" class="form-control col-md-7 col-xs-12">
                             </div>
                           </div>
-                         
+
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Descripción <span class="required">*</span>
                             </label>
@@ -42,7 +53,7 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            
+
                             <div class="col-md-3 col-sm-6 col-xs-12 col-md-offset-3">
                               <input type="submit" id="last-name" value="Enviar" required="required" class="form-control btn btn-success col-md-7 col-xs-12">
                             </div>
@@ -51,9 +62,9 @@
                             </div>
                           </div>
                         </div>
-                      
+
                      </form>
-                    
+
                  </div>
                 </div>
               </div>

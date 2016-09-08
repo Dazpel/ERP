@@ -65,19 +65,20 @@
                       <li><a href="{{url('/ventas/')}}">Registro </a></li>
                       <li><a href="{{url('/ventas/historia')}}">Registro histórico</a></li>
                       <li><a href="{{url('/ventas/list')}}">Consulta</a></li>
-                      
+
                     </ul>
                   </li>
                   <li><a><i class="fa fa-male" aria-hidden="true"></i> Proveedores <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('/proveedor')}}">Registro</a></li>
                       <li><a href="{{url('/proveedor/list')}}">Consulta</a></li>
-                     
+                      <li><a href="{{url('/inventario')}}">Registrar Compra</a></li>
+
                     </ul>
                   </li>
                   <li><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> Inventario <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{url('/inventario')}}">Registro</a></li>
+                      <li><a href="{{url('/producto')}}">Registro</a></li>
                       <li><a href="{{url('/inventario/list')}}">Consulta</a></li>
                     </ul>
                   </li>
@@ -86,13 +87,13 @@
                       <li><a href="{{url('/reports/users')}}">Usuarios</a></li>
                       <li><a href="{{url('/reports/ventas')}}">Ventas</a></li>
                       <li><a href="{{url('/reports/compras')}}">Compras</a></li>
-                      
+
                     </ul>
                   </li>
-                  
+
                 </ul>
               </div>
-             
+
             </div>
             <!-- /sidebar menu -->
 
@@ -142,7 +143,7 @@
                   </ul>
                 </li>
 
-                
+
                   </ul>
                 </li>
               </ul>
@@ -191,7 +192,7 @@
     <script src="{{ asset('vendors/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
     <script src="{{ asset('vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{ asset('vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js')}}"></script>
-    
+
     <script src="{{ asset('vendors/jszip/dist/jszip.min.js')}}"></script>
     <script src="{{ asset('vendors/pdfmake/build/pdfmake.min.js')}}"></script>
     <script src="{{ asset('vendors/pdfmake/build/vfs_fonts.js')}}"></script>

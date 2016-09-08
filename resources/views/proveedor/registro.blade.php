@@ -20,8 +20,8 @@
 
                     <!-- Smart Wizard -->
                     <p>Complete los pasos llenando los campos correspondientes</p>
-                    
-                      
+
+
                       <form action="/proveedor/add" method="post">
                         {{csrf_field()}}
                         <div class="form-horizontal form-label-left">
@@ -41,6 +41,13 @@
                             </div>
                           </div>
                           <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Rif <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input type="text" id="last-name" name="rif" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                          </div>
+                          <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Dirección <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -56,7 +63,7 @@
                           </div>
 
                           <div class="form-group">
-                            
+
                             <div class="col-md-3 col-sm-6 col-xs-12 col-md-offset-3">
                               <input type="submit" id="last-name" value="Enviar" required="required" class="form-control btn btn-success col-md-7 col-xs-12">
                             </div>
@@ -65,9 +72,9 @@
                             </div>
                           </div>
                         </div>
-                      
+
                      </form>
-                    
+
                  </div>
                 </div>
               </div>

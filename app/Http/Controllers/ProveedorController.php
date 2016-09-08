@@ -22,13 +22,14 @@ class ProveedorController extends Controller
     	//--------------------------------------------------------------------------------
     	$proveedor->nombre=$request->nombre;
     	$proveedor->telf=$request->telefono;
+      $proveedor->rif=$request->rif;
     	$proveedor->direccion=$request->direccion;
     	$proveedor->correo=$request->email;
-    	
+
     //--------------------------------------------------------------------------------
 
     	$proveedor->save();
-      
+
     	return redirect('proveedor/list');
 
     }
