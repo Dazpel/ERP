@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Producto as Producto;
+use App\TipoProducto as Tipo;
 class ProductoController extends Controller
 {
     public function getIndex()
@@ -29,7 +30,12 @@ class ProductoController extends Controller
     	$producto= Producto::all();
     	return response()->json($producto);
     }
+    public function getTipo()
+    {
+        $tipos= Tipo::all();
+        return response()->json($tipos);
 
+    }
     public function getList()
     {
     	$productos=Producto::all();

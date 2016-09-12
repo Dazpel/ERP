@@ -30,7 +30,7 @@
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tipo Producto <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                              <select type="text" id="first-name" required="required" name="tipo_producto" class="form-control col-md-7 col-xs-12">
+                              <select type="text" id="tipo" required="required" name="tipo_producto" class="form-control col-md-7 col-xs-12">
                                 <option value="">Seleccione</option>
 
                               </select>
@@ -76,6 +76,15 @@
 @section('scripts')
     <script>
       $(document).ready(function() {
+$.get('/producto/tipo', function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+          console.log(data[i].id);
+          $('#tipo').append('<option value='+data[i].id+'>'+data[i].nombre+'</option>');
+        }
+        //
+      });
+
         $('#wizard').smartWizard();
 
         $('#wizard_verticle').smartWizard({

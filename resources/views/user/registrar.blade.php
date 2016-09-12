@@ -90,8 +90,9 @@
                             <label class="control-label center-block switch">
                               <input type="checkbox" id="chack" >
                               <div class="slider round"></div>
+                              
                             </label>
-
+                            <div class="text-center col-md-12">marque de ser necesario para agregar contraseña</div>
                           </div>
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Correo <span class="required">*</span>

@@ -179,10 +179,10 @@
 		$('#items').change(function(event) {
 			$('#con').empty();
 			for (var i = 0; i < event.target.valueAsNumber; i++) {
-				$('#con').append('<div><p>Producto '+(i+1)+'</p><div class="form-group"><label class="control-label col-md-3 col-sm-3" for="first-name">Producto <span class="required">*</span></label><div class="col-md-6 col-sm-6"><select id="first-name2" required="required" class="form-control col-md-7 col-xs-12 select" name="producto[]"><option value="">Seleccione</option></select></div></div><div class="form-group"><label for="middle-name" class="control-label col-md-3 col-sm-3">Cantidad</label><div class="col-md-6 col-sm-6"><input id="middle-name2" class="form-control col-md-7 col-xs-12" type="text" name="cantidad[]"></div></div></div>');
+				$('#con').append('<div><p>Producto '+(i+1)+'</p><div class="form-group"><label class="control-label col-md-3 col-sm-3" for="first-name">Producto <span class="required">*</span></label><div class="col-md-6 col-sm-6"><select id="first-name2" required="required" class="form-control col-md-7 col-xs-12 select" name="producto[]"><option value="">Seleccione</option></select></div></div><div class="form-group"><label for="middle-name" class="control-label col-md-3 col-sm-3">Cantidad</label><div class="col-md-6 col-sm-6"><input id="middle-name2" class="form-control col-md-7 col-xs-12" type="text" name="cantidad[]"></div></div><div class="form-group"><label for="middle-name" class="control-label col-md-3 col-sm-3">Precio Base</label><div class="col-md-6 col-sm-6"><input id="middle-name2" class="form-control col-md-7 col-xs-12" type="text" name="base[]"></div></div></div>');
 			}
 
-    var get= $.get('/producto/pr', function(data) {
+     $.get('/producto/pr', function(data) {
         
         for (var i = 0; i < data.length; i++) {
           
@@ -190,7 +190,7 @@
         }
         //
       });
-    return data;
+    
 			
 		});
 $('#legresos').change(function(event) {
@@ -237,20 +237,26 @@ function onFinishCallback(){
 function modal(){
 //--------------------------poblando el modal-----------
 var data= $('#Form').serializeArray();
- console.log(data);
+ 
 //-----productos
 for (var i = 1; i <= data[2].value; i++) {
   for (var i = 1; i <= data[2].value*2; i=i+2) {
-    $('#prod').append('<li>'+data[2+i].value+'</li>');
+
+var pr=$.get('/producto/pr');
+pr.done(function (val){
+  console.log(val)
+  $('#prod').append('<li>'+data[2+i].value+'</li>');
+});
+    
   $('#cant').append('<li>'+data[2+i+1].value+'</li>');
-  $('#total').append('<li>Total</li>');
+  $('#total').append('<li>'+(data[2+i+2].value*data[2+i+1].value)+'</li>');
   }
   
   //-----productos
 
   //------ingresos
-  var inicio=data[2].value*2+2;
-  var fin=data[2].value*2+5; 
+  var inicio=data[2].value*2+3;
+  var fin=data[2].value*2+6; 
 for (var i = inicio; i <= fin; i++) {
   $('#ingresos').append('<li>'+data[i+1].value+'</li>');
 }
