@@ -20,7 +20,7 @@
     <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
     <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href=" {{ asset('build/css/custom.min.css') }}" rel="stylesheet">
+    <link href=" {{ asset('build/css/custom.css') }}" rel="stylesheet">
     <link href=" {{ asset('build/css/style.css') }}" rel="stylesheet">
   </head>
 
@@ -37,7 +37,7 @@
 
             <!-- menu profile quick info -->
             <div class="profile col-md-12 col-sm-12 col-xs-12">
-              <div class="profile_pic text-center center-block">
+              <div style="margin-top: 10px;" class="profile_pic text-center center-block">
                 <i class="fa fa-user " ></i>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12 text-center center-block">
@@ -51,7 +51,7 @@
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
+              <div style= "margin-top: 120px;" class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-users" aria-hidden="true"></i> Empleados <span class="fa fa-chevron-down"></span></a>
@@ -60,7 +60,7 @@
                       <li><a href="{{url('/user/list')}}">Consulta</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-money" aria-hidden="true"></i>Ventas <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-money" aria-hidden="true"></i> Ventas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('/ventas/')}}">Registro </a></li>
                       <li><a href="{{url('/ventas/historia')}}">Registro histórico</a></li>
@@ -98,20 +98,7 @@
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
+          
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -127,14 +114,13 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    John Doe
+                  <h2>{{strtoupper(Auth::user()->nombre)}}</h2>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profile</a></li>
                     <li>
                       <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
                         <span>Settings</span>
                       </a>
                     </li>
@@ -161,7 +147,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            Prototipo de Sistema de Información para defensa de tesis UAH</a>
           </div>
           <div class="clearfix"></div>
         </footer>

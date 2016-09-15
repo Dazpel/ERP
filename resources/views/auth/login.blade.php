@@ -17,45 +17,40 @@
     <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="../build/css/custom.css" rel="stylesheet">
   </head>
 
   <body class="login">
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
-
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
             <form action="{{ url('/login') }}" method="post">
-              <h1>Login Form</h1>
+              <h1>Entrar al Sistema</h1>
                {{ csrf_field() }}
               <div>
-                <input type="email" name="email" class="form-control" placeholder="email" required="" />
+                <input type="email" name="email" class="form-control" placeholder="Correo" required="" />
               </div>
               <div>
-                <input type="password" name="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" name="password" class="form-control" placeholder="Contraseña" required="" />
               </div>
-              <div>
-              <input type="submit" class="btn btn-default submit"" name="Log in" value="Log in">
-                
-                <a class="reset_pass" href="#">Lost your password?</a>
+
+              <div style="width: 150px; margin: 0 auto;">
+              <input type="submit" class="btn btn-default submit"" name="Log in" value="Entrar">
               </div>
 
               <div class="clearfix"></div>
 
-              <div class="separator">
-                <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Create Account </a>
-                </p>
-
+           <div class="separator">
+               
                 <div class="clearfix"></div>
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <h1><i class="fa fa-gift"></i> Style Odonate's</h1>
+                  <p>©2016 Prototipo de Sistema de Información para defensa de tesis UAH</p>
                 </div>
               </div>
             </form>
@@ -90,8 +85,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <h1><i class="fa fa-paw"></i> Style Odonate's</h1>
+                  <p>©2016 Prototipo de Sistema de Información para defensa de tesis UAH</p>
                 </div>
               </div>
             </form>
