@@ -19,5 +19,7 @@ Route::controller('/proveedor','ProveedorController');
 Route::controller('/inventario','InventarioController');
 Route::controller('/reports','ReportsController');
 Route::controller('/producto','ProductoController');
+Route::controller('/ventas','VentasController');
+Route::get('compra/{id}', 'CompraController@index');
 Route::auth();
 Route::get('/', 'HomeController@index');

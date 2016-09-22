@@ -73,8 +73,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-primary" id="verificacion">Guardar Registro</button>
+                          <button type="button" id="cerrar" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                          <button type="button"  class="btn btn-primary" id="verificacion">Guardar Registro</button>
                         </div>
 
                       </div>

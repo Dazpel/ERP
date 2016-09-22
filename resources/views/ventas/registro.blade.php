@@ -235,6 +235,7 @@ function onFinishCallback(){
            });
           }
 function modal(){
+
 //--------------------------poblando el modal-----------
 var data= $('#Form').serializeArray();
  
@@ -242,10 +243,10 @@ var data= $('#Form').serializeArray();
 for (var i = 1; i <= data[2].value; i++) {
   for (var i = 1; i <= data[2].value*2; i=i+2) {
 
-var pr=$.get('/producto/pr');
+var pr=$.get('/producto/prj/'+data[2+i].value);
 pr.done(function (val){
   console.log(val)
-  $('#prod').append('<li>'+data[2+i].value+'</li>');
+  $('#prod').append('<li>'+val[0].nombre+'</li>');
 });
     
   $('#cant').append('<li>'+data[2+i+1].value+'</li>');
@@ -263,10 +264,17 @@ for (var i = inicio; i <= fin; i++) {
   
 }
   //--------------Inicio el modal-------------------
-  $("#modal").modal();
+  $("#modal").modal({keyboard: false});
 
-
-
+  $("#cerrar").click(function(event) {
+    data="";
+  });
+$("#verificacion").click(function(event) {
+ 
+ $.post('/ventas/add', {param1: data, _token: data[0].value}, function(data, textStatus, xhr) {
+   alert(xhr)
+ });
+});
 
 }
         $('#wizard_verticle').smartWizard({
@@ -279,6 +287,6 @@ for (var i = inicio; i <= fin; i++) {
         $('.buttonPrevious').addClass('btn btn-primary');
         $('.buttonFinish').addClass('btn btn-default');
       });
-    </script>
+    
 </script>
 @endsection

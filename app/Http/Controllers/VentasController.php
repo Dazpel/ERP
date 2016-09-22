@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Ventas as V;
 use App\Http\Requests;
 
 class VentasController extends Controller
@@ -12,8 +12,7 @@ class VentasController extends Controller
     	return view('ventas.registro');
     }
 
-    public function getList(){
-    	$users= User::all();
-    	return view('ventas.consulta')->with('users',$users);
+    public function postAdd(Request $request){
+    	return response()->json($request);
     }
 }

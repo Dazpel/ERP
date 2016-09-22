@@ -30,6 +30,11 @@ class ProductoController extends Controller
     	$producto= Producto::all();
     	return response()->json($producto);
     }
+     public function getPrj($id)
+    {
+        $producto= Producto::where('id',$id)->get();
+        return response()->json($producto);
+    }
     public function getTipo()
     {
         $tipos= Tipo::all();
