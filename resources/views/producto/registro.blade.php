@@ -12,12 +12,12 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li><button type="button" name="button" class="btn btn-success">Nuevo Tipo de Producto</button></li>
+                      <li><button type="button" name="button" class="btn btn-success" id="disp">Nuevo Tipo de Producto</button></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-
+                  @include('producto.modal_tipo')
 
                     <!-- Smart Wizard -->
                     <p>Complete los pasos llenando los campos correspondientes</p>
@@ -94,6 +94,11 @@ $.get('/producto/tipo', function(data) {
         $('.buttonNext').addClass('btn btn-success');
         $('.buttonPrevious').addClass('btn btn-primary');
         $('.buttonFinish').addClass('btn btn-default');
+      });
+
+
+      $('#disp').click(function(event) {
+       $("#modal").modal();
       });
     </script>
 @endsection

@@ -25,7 +25,7 @@
                         <tr>
                           <th>Producto</th>
                           <th>Cantidad</th>
-                          
+                           <th>Compra</th>
                         </tr>
                       </thead>
 
@@ -36,6 +36,7 @@
                         <tr>
                           <td>{{$i->producto->nombre}}</td>
                           <td>{{$i->cantidad}}</td>
+                          <td><a href="/compra/{{$i->comp_id}}" class="btn btn-primary">Ver Compra</a></td>
                  
                         </tr>
                         @endforeach

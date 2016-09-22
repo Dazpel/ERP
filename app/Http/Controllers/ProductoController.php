@@ -41,4 +41,15 @@ class ProductoController extends Controller
     	$productos=Producto::all();
     	return view('producto.list')->with('productos', $productos);
     }
+
+    public function postAddtipo(Request $request)
+    {
+        $tipo= new Tipo();
+
+        $tipo->nombre=$request->nombre;
+        $tipo->save();
+
+        return redirect('/producto');
+
+    }
 }

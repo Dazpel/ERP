@@ -52,7 +52,7 @@ class InventarioController extends Controller
     public function getList(){
     	$inv= Inventario::all();
 
-        dd($inv);
+        
     	return view('inventario.consulta')->with('inv',$inv);
     }
 }
