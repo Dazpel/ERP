@@ -51,7 +51,7 @@
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div style= "margin-top: 120px;" class="menu_section">
+              <div style= "margin-top: 150px;" class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-users" aria-hidden="true"></i> Empleados <span class="fa fa-chevron-down"></span></a>
@@ -118,14 +118,7 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir del Sistema </a></li>
                   </ul>
                 </li>
 
