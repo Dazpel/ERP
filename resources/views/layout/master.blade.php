@@ -64,8 +64,7 @@
                     <ul class="nav child_menu">
                       <li><a href="{{url('/ventas/')}}">Registro </a></li>
                       <li><a href="{{url('/ventas/historia')}}">Registro histórico</a></li>
-                      <li><a href="{{url('/ventas/list')}}">Consulta</a></li>
-
+                      <li><a href="{{url('/ventas/list')}}">Consulta</a>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-male" aria-hidden="true"></i> Proveedores <span class="fa fa-chevron-down"></span></a>
@@ -73,7 +72,6 @@
                       <li><a href="{{url('/proveedor')}}">Registro</a></li>
                       <li><a href="{{url('/proveedor/list')}}">Consulta</a></li>
                       <li><a href="{{url('/inventario')}}">Registrar Compra</a></li>
-
                     </ul>
                   </li>
                   <li><a><i class="fa fa-shopping-cart" aria-hidden="true"></i> Inventario <span class="fa fa-chevron-down"></span></a>
@@ -82,15 +80,18 @@
                       <li><a href="{{url('/inventario/list')}}">Consulta</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-money" aria-hidden="true"></i> Contabilidad <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    <li><a href="{{url('/contabilidad/list')}}">Consulta</a>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('/reports/users')}}">Usuarios</a></li>
                       <li><a href="{{url('/reports/ventas')}}">Ventas</a></li>
-                      <li><a href="{{url('/reports/compras')}}">Compras</a></li>
-
+                      <li><a href="{{url('/reports/compras')}}">Compras</a>  </li>
                     </ul>
                   </li>
-
                 </ul>
               </div>
 

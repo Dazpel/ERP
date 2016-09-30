@@ -20,6 +20,7 @@ Route::controller('/inventario','InventarioController');
 Route::controller('/reports','ReportsController');
 Route::controller('/producto','ProductoController');
 Route::controller('/ventas','VentasController');
+Route::controller('/contabilidad','ContabilidadController');
 Route::get('compra/{id}', 'CompraController@index');
 Route::auth();
 Route::get('/', 'HomeController@index');
