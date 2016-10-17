@@ -238,10 +238,10 @@ function modal(){
 
 //--------------------------poblando el modal-----------
 var data= $('#Form').serializeArray();
- 
+ console.log(data)
 //-----productos
 for (var i = 1; i <= data[2].value; i++) {
-  for (var i = 1; i <= data[2].value*2; i=i+2) {
+  for (var i = 1; i <= data[2].value*3; i=i+3) {
 
 var pr=$.get('/producto/prj/'+data[2+i].value);
 pr.done(function (val){
@@ -256,23 +256,57 @@ pr.done(function (val){
   //-----productos
 
   //------ingresos
-  var inicio=data[2].value*2+3;
-  var fin=data[2].value*2+6; 
-for (var i = inicio; i <= fin; i++) {
-  $('#ingresos').append('<li>'+data[i+1].value+'</li>');
+  var inicio=data[2].value*3+3;
+  var fin=data[2].value*3+6; 
+for (var i = inicio; i < fin; i++) {
+  $('#ingresos').append('<li>'+data[i].value+'</li>');
 }
-  
+  $('#ingresos').append('<li>'+(parseInt(data[inicio+1].value)+parseInt(data[fin-1].value))+'</li>');
+
+  //------------gastos
+
+var j=fin;
+for (var i = 0; i <data[j].value; i++) {
+
+ $("#descrip").append('<li>'+data[fin+1].value+'</li>')
+ $("#mon").append('<li>'+data[fin+2].value+'</li>')
+ fin=fin+2;
 }
+//------deposito
+for (var i = (fin+1); i < (fin+3); i++) {
+  console.log(i)
+ $("#dep").append('<li>'+data[i].value+'</li>')
+}
+
+
+}//fin funion
+
+
   //--------------Inicio el modal-------------------
   $("#modal").modal({keyboard: false});
 
   $("#cerrar").click(function(event) {
-    data="";
+      $('#prod').empty();
+      $('#cant').empty();
+      $('#total').empty();
   });
 $("#verificacion").click(function(event) {
  
  $.post('/ventas/add', {param1: data, _token: data[0].value}, function(data, textStatus, xhr) {
-   alert(xhr)
+   if (textStatus=="success") {
+    $('#modal').modal('hide')
+           new PNotify({
+                                  title: 'Registro Exitoso',
+                                  text: 'Venta Registrada con Éxito',
+                                  type: 'success',
+                                  hide: true,
+                                  delay:8000,
+                                  styling: 'bootstrap3'
+                              });  
+           $('#prod').empty();
+      $('#cant').empty();
+      $('#total').empty();
+   }
  });
 });
 

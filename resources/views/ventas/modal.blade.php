@@ -50,11 +50,11 @@
                                    <p class="text-center">Gastos</p>
                                     <div class="col-md-6 col-lg-6">
                                     <p>Descripción</p>
-                                      <ul></ul>
+                                      <ul id="descrip"></ul>
                                    </div>
                                    <div class="col-md-6 col-lg-6">
                                     <p>Monto</p>
-                                      <ul></ul>
+                                      <ul id="mon"></ul>
                                    </div>
                                 </div>
                                 <div class="col-md-12">
@@ -64,7 +64,10 @@
                                       <p>Banco</p>
                                       <p>Monto</p>
                                    </div>
-                                   
+                                   <div class="col-md-6 col-lg-6">
+                                    
+                                      <ul id="dep"></ul>
+                                   </div>
                                 </div>
                                
                             </div>
